@@ -26,6 +26,10 @@
   .orbi-pain-card.reveal.in { opacity: 1; transform: none; }
   @keyframes orbA { to { transform: rotate(360deg); } }
   @keyframes orbSpin { to { transform: rotate(360deg); } }
+  @keyframes modelPreviewPan {
+    0%, 12% { object-position: center top; }
+    88%, 100% { object-position: center bottom; }
+  }
   .orbi-mini-item:hover .orbi-mini-ico { transform: scale(1.1); box-shadow: 0 14px 34px rgba(0,0,0,0.5); }
   @property --holoA { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
   @keyframes holoSweep { to { --holoA: 360deg; } }
@@ -42,6 +46,7 @@
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .orbi-holo-ring { animation: none; background: linear-gradient(135deg, rgba(255,45,45,0.5), transparent 60%); }
+    .orbi-model-window > img { animation: none !important; }
   }
   .orbi-serv-row:hover .orbi-serv-orbit { animation-duration: 1.1s !important; }
   .orbi-serv-row:hover .orbi-serv-node > span:first-of-type { border-color: #ff2d2d !important; box-shadow: 0 0 18px rgba(255,45,45,0.35); }
@@ -140,7 +145,11 @@
   .orbi-model-card::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(255,255,255,.08); border-radius: 13px; pointer-events: none; }
   .orbi-model-top, .orbi-model-bottom { position: relative; z-index: 1; }
   .orbi-model-window { position: relative; display: flex; flex-direction: column; gap: 8px; width: 100%; height: 136px; overflow: hidden; padding: 0; box-sizing: border-box; border-radius: 11px; background: #0c0000; border: 1px solid rgba(255,255,255,.12); }
-  .orbi-model-window > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .orbi-model-window > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; animation: modelPreviewPan 12s ease-in-out infinite alternate; animation-play-state: paused; }
+  .orbi-model-window.is-preview-active > img { animation-play-state: running; will-change: object-position; }
+  .orbi-model-card:nth-child(3n + 2) .orbi-model-window > img { animation-delay: -3s; }
+  .orbi-model-card:nth-child(3n + 3) .orbi-model-window > img { animation-delay: -6s; }
+  .orbi-model-card:hover .orbi-model-window > img { animation-duration: 8s; }
   .orbi-model-window span { display: block; border-radius: 99px; background: rgba(255,255,255,.16); }
   .orbi-model-window span:nth-child(1) { width: 24%; height: 7px; background: var(--accent, #ff4335); }
   .orbi-model-window span:nth-child(2) { width: 72%; height: 16px; background: rgba(255,255,255,.85); }
@@ -2001,6 +2010,15 @@ document.addEventListener('DOMContentLoaded', function(){
       image.decoding = 'async';
       preview.replaceChildren(image);
     });
+    const modelWindows = document.querySelectorAll('.orbi-model-window');
+    if ('IntersectionObserver' in window) {
+      const previewObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => entry.target.classList.toggle('is-preview-active', entry.isIntersecting));
+      }, { rootMargin: '100px 0px', threshold: 0.08 });
+      modelWindows.forEach((preview) => previewObserver.observe(preview));
+    } else {
+      modelWindows.forEach((preview) => preview.classList.add('is-preview-active'));
+    }
     const frames = document.querySelectorAll('iframe[data-site]');
     frames.forEach((f) => { f.style.opacity = '0'; f.style.transition = 'opacity .55s ease'; });
     const mount = (f) => {
