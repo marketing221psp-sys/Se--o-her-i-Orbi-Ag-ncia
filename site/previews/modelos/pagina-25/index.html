@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script src="../orbi-brand.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <svg class="glass-filter-svg" aria-hidden="true" focusable="false">
+      <defs>
+        <filter
+          id="card-liquid-glass"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          color-interpolation-filters="sRGB"
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.05 0.05"
+            numOctaves="1"
+            seed="1"
+            result="turbulence"
+          />
+          <feGaussianBlur in="turbulence" stdDeviation="2" result="blurredNoise" />
+          <feDisplacementMap
+            in="SourceGraphic"
+            in2="blurredNoise"
+            scale="70"
+            xChannelSelector="R"
+            yChannelSelector="B"
+            result="displaced"
+          />
+          <feGaussianBlur in="displaced" stdDeviation="4" result="finalBlur" />
+          <feComposite in="finalBlur" in2="finalBlur" operator="over" />
+        </filter>
+      </defs>
+    </svg>
+
+    <main class="page-shell">
+      <section class="hero" aria-label="Hero da landing page">
+        <div class="hero-scroll-blur" aria-hidden="true"></div>
+        <div class="hero-reveal" aria-hidden="true"></div>
+        <canvas class="hero-mask-canvas" aria-hidden="true"></canvas>
+
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="section-chip">
+              <span aria-hidden="true"></span>
+              Kit P&aacute;gina no Ar
+            </p>
+
+            <h1>Crie p&aacute;ginas de vendas em menos de 2 horas</h1>
+
+            <p class="hero-subtitle">
+              Apenas copiando e colando prompts, voc&ecirc; ter&aacute; uma p&aacute;gina de vendas
+              profissional sem precisar criar nada do zero.
+            </p>
+
+            <a class="hero-cta" href="#oferta">Quero acessar agora</a>
+          </div>
+
+          <div class="hero-visual">
+            <div class="image-slot"></div>
+
+            <ul class="hero-bullets" aria-label="Destaques do kit">
+              <li>Copie e cole</li>
+              <li>+30 modelos</li>
+              <li>Pronta ainda hoje</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="impact-section" aria-label="Benef&iacute;cios que este material entrega">
+        <div class="impact-inner">
+          <h2>Os benef&iacute;cios que voc&ecirc; vai sentir na pr&aacute;tica</h2>
+
+          <div class="impact-cards">
+            <article class="impact-card">
+              <span class="impact-icon impact-icon-plus" aria-hidden="true"></span>
+              <span class="impact-kicker">Mais agilidade</span>
+              <h3>Sua p&aacute;gina pronta sem travar</h3>
+              <p>
+                Saia da ideia para a execu&ccedil;&atilde;o com mais rapidez,
+                sem perder tempo tentando descobrir o que escrever ou como montar.
+              </p>
+            </article>
+
+            <article class="impact-card impact-card-main">
+              <span class="impact-icon impact-icon-ring" aria-hidden="true"></span>
+              <span class="impact-kicker">Mais profissionalismo</span>
+              <h3>Uma p&aacute;gina com cara de quem sabe vender</h3>
+              <p>
+                Organize headline, oferta, benef&iacute;cios e chamada para
+                a&ccedil;&atilde;o em uma estrutura que transmite mais valor e clareza.
+              </p>
+            </article>
+
+            <article class="impact-card">
+              <span class="impact-icon impact-icon-cross" aria-hidden="true"></span>
+              <span class="impact-kicker">Mais convers&atilde;o</span>
+              <h3>Textos que explicam melhor e convencem mais</h3>
+              <p>
+                Transforme ideias soltas em uma mensagem mais direta,
+                persuasiva e pronta para fazer sua oferta parecer mais desej&aacute;vel.
+              </p>
+            </article>
+          </div>
+
+          <a class="impact-cta" href="#hero">Quero uma p&aacute;gina profissional</a>
+        </div>
+      </section>
+
+      <section class="story-section" aria-label="Como o produto funciona">
+        <div class="story-sticky">
+          <div class="story-inner">
+            <p class="story-eyebrow">Como funciona</p>
+            <h2 class="story-statement" data-split="words">
+              Voc&ecirc; recebe prompts prontos, uma estrutura validada e direcionamentos
+              claros para montar uma p&aacute;gina de vendas profissional em poucas horas,
+              sem travar na copy, no layout ou na organiza&ccedil;&atilde;o da oferta.
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-section" aria-label="O que voc&ecirc; vai receber no kit">
+        <div class="video-section__sticky">
+          <video
+            class="video-section__media"
+            src="assets/videos/v1.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          ></video>
+
+          <div class="video-section__cards">
+            <div class="video-section__heading">
+              <h2>O que voc&ecirc; vai receber</h2>
+            </div>
+
+            <article class="video-card video-card--left">
+              <span class="video-card__step">01</span>
+              <h3>Prompts para estruturar a p&aacute;gina</h3>
+              <p>Comandos pensados para organizar headline, oferta, benef&iacute;cios e a ordem dos blocos com mais seguran&ccedil;a.</p>
+            </article>
+
+            <article class="video-card video-card--right">
+              <span class="video-card__step">02</span>
+              <h3>Direcionamento para escrever a copy</h3>
+              <p>Base clara para criar textos mais objetivos, persuasivos e alinhados com o que sua oferta precisa comunicar.</p>
+            </article>
+
+            <article class="video-card video-card--left">
+              <span class="video-card__step">03</span>
+              <h3>Estrutura que deixa a p&aacute;gina mais profissional</h3>
+              <p>Uma sequ&ecirc;ncia mais clara para apresentar valor, gerar interesse e conduzir a leitura at&eacute; a oferta.</p>
+            </article>
+
+            <article class="video-card video-card--right">
+              <span class="video-card__step">04</span>
+              <h3>Mais rapidez para colocar a p&aacute;gina no ar</h3>
+              <p>Um processo mais simples para sair da ideia, evitar retrabalho e chegar em uma p&aacute;gina pronta muito antes.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles-section" aria-label="Diferenciais do produto">
+        <div class="principles-inner">
+          <div class="principles-heading">
+            <p class="principles-eyebrow">Por que funciona</p>
+            <h2>O que torna este material diferente</h2>
+          </div>
+
+          <article class="principle-item">
+            <span class="principle-badge" aria-hidden="true">01</span>
+            <h3>Prompts personalizados</h3>
+            <p>
+              Estruturas pensadas para quem quer criar p&aacute;ginas de vendas com mais
+              clareza, velocidade e dire&ccedil;&atilde;o.
+            </p>
+          </article>
+
+          <article class="principle-item">
+            <span class="principle-badge" aria-hidden="true">02</span>
+            <h3>Mais agilidade real</h3>
+            <p>
+              Voc&ecirc; reduz o tempo de execu&ccedil;&atilde;o e evita travar em etapas como copy,
+              ordem das se&ccedil;&otilde;es e chamada para a&ccedil;&atilde;o.
+            </p>
+          </article>
+
+          <article class="principle-item">
+            <span class="principle-badge" aria-hidden="true">03</span>
+            <h3>Resultado profissional</h3>
+            <p>
+              A p&aacute;gina final fica mais consistente, mais persuasiva e muito mais
+              pronta para converter.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="offer-section" id="oferta" aria-label="Oferta do Kit P&aacute;gina no Ar">
+        <div class="offer-inner">
+          <aside class="offer-card" aria-label="Resumo da oferta">
+            <span class="offer-card__tag">Acesso imediato</span>
+            <h3>Kit P&aacute;gina no Ar</h3>
+
+            <ul class="offer-list" aria-label="Itens inclu&iacute;dos">
+              <li>Prompts para headline, oferta e benef&iacute;cios</li>
+              <li>Sequ&ecirc;ncia guiada para montar a p&aacute;gina</li>
+              <li>Copy pronta para adaptar ao seu produto</li>
+              <li>Fluxo simples para acelerar a execu&ccedil;&atilde;o</li>
+            </ul>
+
+            <div class="offer-price" aria-label="Pre&ccedil;o da oferta">
+              <span>Por apenas</span>
+              <strong>R$ 00,00</strong>
+            </div>
+
+            <a class="offer-cta" href="#hero">Quero minha p&aacute;gina profissional</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-label="Perguntas frequentes">
+        <div class="faq-inner">
+          <div class="faq-heading">
+            <h2>Perguntas frequentes</h2>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Preciso saber design ou programa&ccedil;&atilde;o para usar?</summary>
+              <p>
+                N&atilde;o. O material foi pensado para ajudar voc&ecirc; a montar a
+                estrutura, a copy e a organiza&ccedil;&atilde;o da p&aacute;gina com muito mais
+                clareza, mesmo sem partir do zero.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Esse material serve para qualquer tipo de oferta?</summary>
+              <p>
+                Sim. Voc&ecirc; pode adaptar os prompts e a estrutura para diferentes
+                nichos, produtos e servi&ccedil;os, ajustando a mensagem para a sua
+                realidade.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Em quanto tempo eu consigo montar minha p&aacute;gina?</summary>
+              <p>
+                Isso varia conforme o seu ritmo e o quanto sua oferta j&aacute; est&aacute;
+                definida, mas a proposta do kit &eacute; reduzir bastante o tempo de
+                execu&ccedil;&atilde;o e o retrabalho.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Vou receber acesso na hora?</summary>
+              <p>
+                Sim. O acesso &eacute; imediato para que voc&ecirc; possa come&ccedil;ar a usar o
+                material assim que concluir a compra.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Os prompts j&aacute; v&ecirc;m prontos para copiar e adaptar?</summary>
+              <p>
+                Sim. Voc&ecirc; recebe uma base pronta para copiar, colar e ajustar ao seu
+                produto, acelerando a cria&ccedil;&atilde;o da sua p&aacute;gina de vendas.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
