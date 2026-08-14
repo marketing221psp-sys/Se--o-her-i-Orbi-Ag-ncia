@@ -1,0 +1,2 @@
+# Exemplo real: HERO-07 Fullscreen Immersive (site atual da Órbi)
+Vídeo full-bleed + overlay radial vermelho multiply + vinheta linear no topo + H1 Anton gigante centralizado (uma palavra em stroke-only) + subtítulo curto + 2 CTA + stats com divisores. Ver `site/index.html` linhas do `<video id="heroVid">` até o fim do bloco de stats. Referência de composição, não copiar paleta em novos projetos (trocar cor/tipografia conforme ORBI-COLOR-SYSTEM / ORBI-TYPOGRAPHY-SYSTEM).

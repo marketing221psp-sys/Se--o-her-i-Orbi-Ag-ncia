@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sua Marca — Ortodontia & Estética Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #060f22; font-family: 'Hanken Grotesk', sans-serif; color: #eaf2ff; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #7fb2ff; }
+  ::selection { background: #7fb2ff; color: #06152c; }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+  .reveal { opacity: 0; transform: translateY(34px); transition: opacity .8s cubic-bezier(.16,.84,.44,1), transform .8s cubic-bezier(.16,.84,.44,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .navlink { position: relative; }
+  .navlink::after { content: ''; position: absolute; left: 0; bottom: -5px; height: 2px; width: 0; background: #7fb2ff; transition: width .3s ease; }
+  .navlink:hover::after { width: 100%; }
+  .svc-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 15px; background: rgba(101,163,255,0.14); border: 1px solid rgba(120,175,255,0.3); margin: 0 auto; }
+  .card { padding: 30px 24px; border-radius: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .step-card { padding: 30px 24px; border-radius: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align: center; }
+  .review-card { padding: 28px; border-radius: 20px; background: linear-gradient(180deg, rgba(101,163,255,0.10), rgba(255,255,255,0.03)); border: 1px solid rgba(120,175,255,0.18); text-align: center; }
+  .team-card { border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 1039px) { .grid4 { grid-template-columns: repeat(2, 1fr); } .grid3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 719px) {
+    .grid4, .grid3 { grid-template-columns: 1fr; }
+    .nav-pills { display: none !important; }
+    .hero-wrap { height: auto !important; }
+    .hero-content { padding: 40px 24px !important; }
+    .hero-stats { padding: 10px 24px 40px !important; }
+    .section { padding: 56px 24px !important; }
+    .h1 { font-size: 38px !important; }
+    .h2 { font-size: 30px !important; }
+    .hero-p { font-size: 17px !important; }
+    .showcase-inner { padding: 48px 28px !important; }
+    .cta-outer { padding: 20px 24px 56px !important; }
+    .cta-inner { padding: 48px 28px !important; }
+    .footer { padding: 40px 24px !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section style="position: relative; padding: 10px;">
+  <div class="hero-wrap" style="position: relative; border-radius: 22px; overflow: hidden; height: calc(100vh - 20px); min-height: 620px; display: flex; flex-direction: column;">
+    <video autoplay loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="https://res.cloudinary.com/ldxkye73/video/upload/v1786035101/Tooth_animation_production_instr__202608061340_hwmmpf.mp4" type="video/mp4">
+    </video>
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(102deg, rgba(6,17,40,0.94) 0%, rgba(6,17,40,0.74) 34%, rgba(6,17,40,0.30) 58%, rgba(6,17,40,0) 80%);"></div>
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(6,17,40,0.85) 0%, rgba(6,17,40,0) 34%);"></div>
+
+    <nav style="position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 28px 40px; animation: fadeDown .7s .05s both ease-out;">
+      <a href="#top" style="display: flex; align-items: center; gap: 13px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 13px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(6px); animation: floaty 5s ease-in-out infinite;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3.2C9.7 2 7.2 1.9 5.6 3.4 3.7 5.2 3.6 8.7 4.4 12c.6 2.5 1.2 5 1.9 7 .4 1.1 1 1.8 1.7 1.8.8 0 1.2-.8 1.5-2 .3-1.3.6-2.6 1.2-3.4.3-.4.8-.7 1.3-.7s1 .3 1.3.7c.6.8.9 2.1 1.2 3.4.3 1.2.7 2 1.5 2 .7 0 1.3-.7 1.7-1.8.7-2 1.3-4.5 1.9-7 .8-3.3.7-6.8-1.2-8.6C16.8 1.9 14.3 2 12 3.2Z" fill="#eaf2ff"/><path d="M12 3.2C9.7 2 7.2 1.9 5.6 3.4c-.9.9-1.3 2.2-1.4 3.6 1.6-1.4 3.9-2 6.3-1.1.9.3 1.8.3 2.7 0 2.4-.9 4.7-.3 6.3 1.1-.1-1.4-.5-2.7-1.4-3.6C16.8 1.9 14.3 2 12 3.2Z" fill="#bcd6ff"/></svg>
+        </span>
+        <span style="font-weight: 800; font-size: 20px; letter-spacing: -0.01em; color: #ffffff;">Sua Marca</span>
+      </a>
+      <div class="nav-pills" style="display: flex; align-items: center; gap: 32px; padding: 11px 26px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(10px);">
+        <a href="#servicos" class="navlink" style="font-weight: 600; font-size: 15px; color: rgba(255,255,255,0.9);">Serviços</a>
+        <a href="#especialistas" class="navlink" style="font-weight: 600; font-size: 15px; color: rgba(255,255,255,0.9);">Especialistas</a>
+        <a href="#processo" class="navlink" style="font-weight: 600; font-size: 15px; color: rgba(255,255,255,0.9);">Processo</a>
+        <a href="#depoimentos" class="navlink" style="font-weight: 600; font-size: 15px; color: rgba(255,255,255,0.9);">Depoimentos</a>
+      </div>
+      <a href="#contato" style="font-weight: 700; font-size: 15px; color: #06152c; padding: 12px 24px; border-radius: 999px; background: #ffffff;">Contato</a>
+    </nav>
+
+    <div class="hero-content" style="position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 40px; max-width: 860px; margin: 0 auto;">
+      <h1 class="h1" style="font-weight: 800; font-size: 64px; line-height: 1.02; letter-spacing: -0.025em; color: #ffffff; text-wrap: balance; animation: fadeUp .8s .28s both ease-out;">Nem todo sorriso precisa de conserto, <span style="color: #7fb2ff;">alguns precisam de visão</span></h1>
+      <p class="hero-p" style="margin-top: 24px; max-width: 470px; font-size: 20px; line-height: 1.45; font-weight: 500; color: rgba(233,241,255,0.82); animation: fadeUp .8s .4s both ease-out;">Somos uma clínica premium de ortodontia e estética, criando sorrisos confiantes para quem não se contenta com o comum.</p>
+      <div style="margin-top: 38px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeUp .8s .52s both ease-out;">
+        <a href="#contato" style="display: inline-flex; align-items: center; gap: 13px; padding: 17px 28px 17px 18px; border-radius: 999px; background: linear-gradient(180deg, #4f97f5 0%, #1560d8 100%); box-shadow: 0 16px 34px rgba(21,96,216,0.45); font-weight: 700; font-size: 18px; color: #ffffff;">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 11px; background: rgba(255,255,255,0.20);">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </span>
+          Agendar uma visita
+        </a>
+        <a href="#servicos" style="display: inline-flex; align-items: center; gap: 10px; padding: 17px 26px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.28); font-weight: 600; font-size: 18px; color: #ffffff;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+          Ver resultados
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats" style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 24px; padding: 22px 40px 30px; flex-wrap: wrap; animation: fadeUp .8s .64s both ease-out;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: center;">
+        <div><div style="font-weight: 800; font-size: 26px;">12k+</div><div style="font-size: 13px; color: rgba(233,241,255,0.6);">Sorrisos transformados</div></div>
+        <div style="width: 1px; height: 34px; background: rgba(255,255,255,0.16);"></div>
+        <div><div style="font-weight: 800; font-size: 26px;">4.9<span style="color:#7fb2ff;">★</span></div><div style="font-size: 13px; color: rgba(233,241,255,0.6);">Avaliação dos pacientes</div></div>
+        <div style="width: 1px; height: 34px; background: rgba(255,255,255,0.16);"></div>
+        <div><div style="font-weight: 800; font-size: 26px;">15 anos</div><div style="font-size: 13px; color: rgba(233,241,255,0.6);">De excelência clínica</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div style="padding: 26px 10px;">
+  <div class="reveal" style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: .55;">
+    <span style="font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; color: #7fb2ff;">Reconhecida por</span>
+    <span style="font-weight: 800; font-size: 20px; color: rgba(233,241,255,0.7);">DentalPro</span>
+    <span style="font-weight: 800; font-size: 20px; color: rgba(233,241,255,0.7);">OrthoLux</span>
+    <span style="font-weight: 800; font-size: 20px; color: rgba(233,241,255,0.7);">SmileMag</span>
+    <span style="font-weight: 800; font-size: 20px; color: rgba(233,241,255,0.7);">EstéticaBR</span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section id="servicos" class="section" style="padding: 90px 40px;">
+  <div class="reveal" style="max-width: 720px; margin: 0 auto; text-align: center;">
+    <span style="font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 13px; color: #7fb2ff;">Nossos serviços</span>
+    <h2 class="h2" style="margin-top: 14px; font-weight: 800; font-size: 42px; line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance;">Tratamentos desenhados ao redor de você</h2>
+    <p style="margin-top: 16px; font-size: 18px; line-height: 1.5; color: rgba(233,241,255,0.7);">Da correção ortodôntica ao design de sorriso, cada plano é pensado para revelar a melhor versão do seu sorriso.</p>
+  </div>
+  <div class="grid4" style="margin-top: 40px;">
+    <div class="reveal card">
+      <span class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7fb2ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-1.6-1-3.4-1-4.6.2C6 5.6 6 8 6.6 10.6c.5 2 .9 4 1.4 5.6.3 1 .7 1.6 1.2 1.6.6 0 .9-.7 1.1-1.6.2-1 .4-2 .9-2.5.2-.3.5-.4.8-.4s.6.1.8.4c.5.5.7 1.5.9 2.5.2.9.5 1.6 1.1 1.6.5 0 .9-.6 1.2-1.6.5-1.6.9-3.6 1.4-5.6C18 8 18 5.6 16.6 4.2 15.4 3 13.6 3 12 4Z"/></svg></span>
+      <h3 style="margin-top: 20px; font-weight: 700; font-size: 21px;">Ortodontia invisível</h3>
+      <p style="margin-top: 10px; font-size: 15px; line-height: 1.5; color: rgba(233,241,255,0.66);">Alinhadores transparentes sob medida para um sorriso reto com total discrição.</p>
+    </div>
+    <div class="reveal card">
+      <span class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7fb2ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 16 0"/><path d="M8 9h.01"/><path d="M16 9h.01"/></svg></span>
+      <h3 style="margin-top: 20px; font-weight: 700; font-size: 21px;">Design de sorriso</h3>
+      <p style="margin-top: 10px; font-size: 15px; line-height: 1.5; color: rgba(233,241,255,0.66);">Planejamento digital que harmoniza dentes, gengiva e face de forma natural.</p>
+    </div>
+    <div class="reveal card">
+      <span class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7fb2ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 5-9 13L3 8l3-5Z"/><path d="M3 8h18"/><path d="M9 3 7 8l5 13"/><path d="M15 3l2 5-5 13"/></svg></span>
+      <h3 style="margin-top: 20px; font-weight: 700; font-size: 21px;">Facetas premium</h3>
+      <p style="margin-top: 10px; font-size: 15px; line-height: 1.5; color: rgba(233,241,255,0.66);">Lentes de contato dental ultrafinas para brilho, forma e cor perfeitos.</p>
+    </div>
+    <div class="reveal card">
+      <span class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7fb2ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2"/><path d="M16 4h2a2 2 0 0 1 2 2v2"/><path d="M20 16v2a2 2 0 0 1-2 2h-2"/><path d="M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M4 12h16"/></svg></span>
+      <h3 style="margin-top: 20px; font-weight: 700; font-size: 21px;">Escaneamento 3D</h3>
+      <p style="margin-top: 10px; font-size: 15px; line-height: 1.5; color: rgba(233,241,255,0.66);">Simulação do resultado final antes de iniciar qualquer tratamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE ============ -->
+<section style="padding: 0 10px;">
+  <div class="reveal showcase-inner" style="position: relative; border-radius: 22px; overflow: hidden; min-height: 380px; display: flex; align-items: center; padding: 60px 56px;">
+    <video autoplay loop muted playsinline style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: .9;">
+      <source src="https://res.cloudinary.com/ldxkye73/video/upload/v1786035101/Tooth_animation_production_instr__202608061340_hwmmpf.mp4" type="video/mp4">
+    </video>
+    <div style="position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg, rgba(6,17,40,0.9) 0%, rgba(6,17,40,0.55) 45%, rgba(6,17,40,0.55) 100%);"></div>
+    <div style="position: relative; z-index: 2; margin: 0 auto; max-width: 560px; text-align: center;">
+      <h2 class="h2" style="font-weight: 800; font-size: 42px; line-height: 1.06; letter-spacing: -0.02em;">Tecnologia que enxerga cada detalhe</h2>
+      <p style="margin-top: 16px; font-size: 18px; line-height: 1.5; color: rgba(233,241,255,0.8);">Escaneamento 3D, planejamento digital e simulação do resultado antes de começar. Você vê o futuro do seu sorriso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIALISTS ============ -->
+<section id="especialistas" class="section" style="padding: 90px 40px;">
+  <div class="reveal" style="text-align: center; max-width: 640px; margin: 0 auto;">
+    <span style="font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 13px; color: #7fb2ff;">Especialistas</span>
+    <h2 class="h2" style="margin-top: 14px; font-weight: 800; font-size: 42px; line-height: 1.05; letter-spacing: -0.02em;">Mãos experientes, olhar de artista</h2>
+  </div>
+  <div class="grid3" style="margin-top: 40px;">
+    <div class="reveal team-card">
+      <div style="height: 220px; background: linear-gradient(160deg,#274a8f,#132a5e); position: relative;"><span style="position: absolute; left: 16px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(6,17,40,0.6); backdrop-filter: blur(6px); font-size: 12px; font-weight: 600; color: #bcd6ff;">Ortodontista</span></div>
+      <div style="padding: 20px; text-align: center;"><h3 style="font-weight: 700; font-size: 19px;">Dra. Helena Costa</h3><p style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.64);">Especialista em alinhadores invisíveis com mais de 4 mil casos concluídos.</p></div>
+    </div>
+    <div class="reveal team-card">
+      <div style="height: 220px; background: linear-gradient(160deg,#3a5aa0,#1a356e); position: relative;"><span style="position: absolute; left: 16px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(6,17,40,0.6); backdrop-filter: blur(6px); font-size: 12px; font-weight: 600; color: #bcd6ff;">Design de sorriso</span></div>
+      <div style="padding: 20px; text-align: center;"><h3 style="font-weight: 700; font-size: 19px;">Dr. Rafael Nunes</h3><p style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.64);">Referência em facetas e reabilitação estética minimamente invasiva.</p></div>
+    </div>
+    <div class="reveal team-card">
+      <div style="height: 220px; background: linear-gradient(160deg,#2f4f97,#16305f); position: relative;"><span style="position: absolute; left: 16px; bottom: 14px; padding: 6px 12px; border-radius: 999px; background: rgba(6,17,40,0.6); backdrop-filter: blur(6px); font-size: 12px; font-weight: 600; color: #bcd6ff;">Odontologia digital</span></div>
+      <div style="padding: 20px; text-align: center;"><h3 style="font-weight: 700; font-size: 19px;">Dra. Marina Alves</h3><p style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.64);">Lidera o fluxo 3D e a simulação virtual de resultados da clínica.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="processo" class="section" style="padding: 90px 40px;">
+  <div class="reveal" style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <span style="font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 13px; color: #7fb2ff;">Como funciona</span>
+    <h2 class="h2" style="margin-top: 14px; font-weight: 800; font-size: 42px; line-height: 1.05; letter-spacing: -0.02em;">Quatro passos até o seu novo sorriso</h2>
+  </div>
+  <div class="grid4" style="margin-top: 40px;">
+    <div class="reveal step-card"><div style="font-weight: 800; font-size: 40px; color: rgba(127,178,255,0.4); line-height: 1;">01</div><h3 style="margin-top: 14px; font-weight: 700; font-size: 19px;">Avaliação</h3><p style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.64);">Conversamos sobre seus objetivos e fazemos o escaneamento inicial.</p></div>
+    <div class="reveal step-card"><div style="font-weight: 800; font-size: 40px; color: rgba(127,178,255,0.4); line-height: 1;">02</div><h3 style="margin-top: 14px; font-weight: 700; font-size: 19px;">Plano digital</h3><p style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.64);">Você vê a simulação do seu novo sorriso antes de decidir.</p></div>
+    <div class="reveal step-card"><div style="font-weight: 800; font-size: 40px; color: rgba(127,178,255,0.4); line-height: 1;">03</div><h3 style="margin-top: 14px; font-weight: 700; font-size: 19px;">Tratamento</h3><p style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.64);">Execução com acompanhamento próximo em cada etapa.</p></div>
+    <div class="reveal step-card"><div style="font-weight: 800; font-size: 40px; color: rgba(127,178,255,0.4); line-height: 1;">04</div><h3 style="margin-top: 14px; font-weight: 700; font-size: 19px;">Resultado</h3><p style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.64);">Seu sorriso revelado, com manutenção e cuidado contínuos.</p></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="depoimentos" class="section" style="padding: 90px 40px;">
+  <div class="reveal" style="text-align: center; max-width: 640px; margin: 0 auto;">
+    <span style="font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 13px; color: #7fb2ff;">Depoimentos</span>
+    <h2 class="h2" style="margin-top: 14px; font-weight: 800; font-size: 42px; line-height: 1.05; letter-spacing: -0.02em;">Quem confiou, sorri diferente</h2>
+  </div>
+  <div class="grid3" style="margin-top: 40px;">
+    <div class="reveal review-card">
+      <div style="color: #7fb2ff; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
+      <p style="margin-top: 16px; font-size: 16px; line-height: 1.55; color: rgba(233,241,255,0.9);">"Nunca imaginei sorrir com tanta confiança. O planejamento digital me mostrou tudo antes."</p>
+      <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 12px;"><span style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(160deg,#4f97f5,#1560d8);"></span><div style="text-align: left;"><div style="font-weight: 700; font-size: 15px;">Camila R.</div><div style="font-size: 13px; color: rgba(233,241,255,0.55);">Alinhadores invisíveis</div></div></div>
+    </div>
+    <div class="reveal review-card">
+      <div style="color: #7fb2ff; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
+      <p style="margin-top: 16px; font-size: 16px; line-height: 1.55; color: rgba(233,241,255,0.9);">"Atendimento impecável e um resultado que parece totalmente natural. Recomendo demais."</p>
+      <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 12px;"><span style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(160deg,#7fb2ff,#3a5aa0);"></span><div style="text-align: left;"><div style="font-weight: 700; font-size: 15px;">Bruno M.</div><div style="font-size: 13px; color: rgba(233,241,255,0.55);">Facetas premium</div></div></div>
+    </div>
+    <div class="reveal review-card">
+      <div style="color: #7fb2ff; font-size: 18px; letter-spacing: 2px;">★★★★★</div>
+      <p style="margin-top: 16px; font-size: 16px; line-height: 1.55; color: rgba(233,241,255,0.9);">"Do primeiro contato ao resultado final, senti que estava em mãos de verdadeiros artistas."</p>
+      <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 12px;"><span style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(160deg,#65a3ff,#274a8f);"></span><div style="text-align: left;"><div style="font-weight: 700; font-size: 15px;">Letícia S.</div><div style="font-size: 13px; color: rgba(233,241,255,0.55);">Design de sorriso</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="contato" class="cta-outer" style="padding: 40px 40px 90px;">
+  <div class="reveal cta-inner" style="position: relative; overflow: hidden; border-radius: 26px; padding: 72px 56px; text-align: center; background: radial-gradient(120% 140% at 50% 0%, #1c4fb0 0%, #0e2a63 55%, #0a1e4a 100%); border: 1px solid rgba(120,175,255,0.25);">
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(127,178,255,0.12), transparent); background-size: 200% 100%; animation: shimmer 6s linear infinite;"></div>
+    <div style="position: relative;">
+      <h2 class="h1" style="font-weight: 800; font-size: 64px; line-height: 1.03; letter-spacing: -0.025em; text-wrap: balance;">Pronto para revelar seu melhor sorriso?</h2>
+      <p style="margin: 18px auto 0; max-width: 480px; font-size: 18px; line-height: 1.5; color: rgba(233,241,255,0.82);">Agende sua avaliação gratuita e receba um plano digital personalizado.</p>
+      <div style="margin-top: 34px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="#" style="display: inline-flex; align-items: center; gap: 12px; padding: 17px 30px; border-radius: 999px; background: #ffffff; font-weight: 700; font-size: 18px; color: #0e2a63;">Agendar avaliação gratuita</a>
+        <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 17px 28px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.35); font-weight: 600; font-size: 18px; color: #ffffff;">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" style="padding: 56px 40px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 20px;">
+  <div style="display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+    <div style="max-width: 300px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3.2C9.7 2 7.2 1.9 5.6 3.4 3.7 5.2 3.6 8.7 4.4 12c.6 2.5 1.2 5 1.9 7 .4 1.1 1 1.8 1.7 1.8.8 0 1.2-.8 1.5-2 .3-1.3.6-2.6 1.2-3.4.3-.4.8-.7 1.3-.7s1 .3 1.3.7c.6.8.9 2.1 1.2 3.4.3 1.2.7 2 1.5 2 .7 0 1.3-.7 1.7-1.8.7-2 1.3-4.5 1.9-7 .8-3.3.7-6.8-1.2-8.6C16.8 1.9 14.3 2 12 3.2Z" fill="#eaf2ff"/></svg>
+        </span>
+        <span style="font-weight: 800; font-size: 18px;">Sua Marca</span>
+      </div>
+      <p style="margin-top: 14px; font-size: 14px; line-height: 1.5; color: rgba(233,241,255,0.55);">Ortodontia e estética premium. Suave. Definido.</p>
+    </div>
+    <div style="display: flex; gap: 64px; flex-wrap: wrap;">
+      <div><div style="font-weight: 700; font-size: 14px; margin-bottom: 12px;">Clínica</div><div style="display: flex; flex-direction: column; gap: 9px;"><a href="#servicos" style="font-size: 14px; color: rgba(233,241,255,0.6);">Serviços</a><a href="#especialistas" style="font-size: 14px; color: rgba(233,241,255,0.6);">Especialistas</a><a href="#processo" style="font-size: 14px; color: rgba(233,241,255,0.6);">Processo</a></div></div>
+      <div><div style="font-weight: 700; font-size: 14px; margin-bottom: 12px;">Contato</div><div style="display: flex; flex-direction: column; gap: 9px;"><a href="#" style="font-size: 14px; color: rgba(233,241,255,0.6);">WhatsApp</a><a href="#" style="font-size: 14px; color: rgba(233,241,255,0.6);">Instagram</a><a href="#" style="font-size: 14px; color: rgba(233,241,255,0.6);">contato@suamarca.com</a></div></div>
+    </div>
+  </div>
+  <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; color: rgba(233,241,255,0.4);">&copy; 2026 Sua Marca. Todos os direitos reservados.</div>
+</footer>
+
+<script>
+// Autoplay videos muted
+document.querySelectorAll('video').forEach(v => { v.muted = true; v.volume = 0; v.play().catch(() => {}); });
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
