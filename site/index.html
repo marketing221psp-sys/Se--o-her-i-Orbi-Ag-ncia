@@ -1943,8 +1943,8 @@ document.addEventListener('DOMContentLoaded', function(){
         rio.observe(servList);
       } else { playRows(); }
     }
-    // As miniaturas da biblioteca são os próprios sites: cada iframe só é
-    // carregado ao se aproximar da tela, em fila, para preservar a velocidade.
+    // As miniaturas usam os próprios sites. Elas começam antes da seção entrar
+    // na tela e carregam em pequenos grupos, mantendo rapidez sem baixar tudo.
     document.querySelectorAll('.orbi-model-card').forEach((card) => {
       const preview = card.querySelector('.orbi-model-window');
       const title = card.querySelector('h3');
@@ -1966,11 +1966,28 @@ document.addEventListener('DOMContentLoaded', function(){
     };
     if ('IntersectionObserver' in window) {
       const queue = [];
-      let busy = false;
-      const next = () => { if (busy || !queue.length) return; busy = true; const f = queue.shift(); f.addEventListener('load', () => { busy = false; setTimeout(next, 250); }, { once: true }); setTimeout(() => { busy = false; next(); }, 5000); mount(f); };
+      const maxParallel = 3;
+      let active = 0;
+      const next = () => {
+        while (active < maxParallel && queue.length) {
+          const f = queue.shift();
+          active += 1;
+          let settled = false;
+          const done = () => {
+            if (settled) return;
+            settled = true;
+            active -= 1;
+            setTimeout(next, 100);
+          };
+          f.addEventListener('load', done, { once: true });
+          f.addEventListener('error', done, { once: true });
+          setTimeout(done, 5000);
+          mount(f);
+        }
+      };
       const fio = new IntersectionObserver((ents) => {
         ents.forEach((e) => { if (e.isIntersecting) { queue.push(e.target); fio.unobserve(e.target); next(); } });
-      }, { rootMargin: '200px 0px' });
+      }, { rootMargin: '550px 0px' });
       frames.forEach((f) => fio.observe(f));
     } else {
       frames.forEach(mount);
