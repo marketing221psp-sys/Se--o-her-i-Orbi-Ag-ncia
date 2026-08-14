@@ -1862,6 +1862,19 @@
 <script>
 
 (function(){
+  var navigation = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  var isReload = navigation ? navigation.type === 'reload' : performance.navigation && performance.navigation.type === 1;
+  var isCatalog = new URLSearchParams(window.location.search).has('catalogo');
+  if (!isReload || isCatalog) return;
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (window.location.hash) history.replaceState(null, '', window.location.pathname + window.location.search);
+  var returnToTop = function(){ window.scrollTo(0, 0); };
+  returnToTop();
+  document.addEventListener('DOMContentLoaded', returnToTop, { once: true });
+  window.addEventListener('pageshow', returnToTop, { once: true });
+})();
+
+(function(){
   var el = document.getElementById('heroVid');
   if (!el) return;
   if (el.dataset.src && !el.src) { el.src = el.dataset.src; el.load(); }
