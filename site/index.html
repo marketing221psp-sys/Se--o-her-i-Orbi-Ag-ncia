@@ -141,12 +141,6 @@
   .orbi-model-top, .orbi-model-bottom { position: relative; z-index: 1; }
   .orbi-model-window { position: relative; display: flex; flex-direction: column; gap: 8px; width: 100%; height: 136px; overflow: hidden; padding: 0; box-sizing: border-box; border-radius: 11px; background: #0c0000; border: 1px solid rgba(255,255,255,.12); }
   .orbi-model-window > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: opacity .3s ease; }
-  .orbi-model-live { position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; opacity: 0; transform: scale(.4); transform-origin: top left; pointer-events: none; background: #0c0000; transition: opacity .4s ease; }
-  .orbi-model-window span { display: block; border-radius: 99px; background: rgba(255,255,255,.16); }
-  .orbi-model-window span:nth-child(1) { width: 24%; height: 7px; background: var(--accent, #ff4335); }
-  .orbi-model-window span:nth-child(2) { width: 72%; height: 16px; background: rgba(255,255,255,.85); }
-  .orbi-model-window span:nth-child(3) { width: 58%; height: 7px; }
-  .orbi-model-window span:nth-child(4) { width: 100%; height: 20px; background: linear-gradient(90deg, var(--accent, #ff4335), rgba(255,255,255,.12)); opacity: .65; }
   /* Na home, três referências ganham a mesma leitura limpa do portfólio.
      O catálogo completo é acessado por ?catalogo=1#modelos. */
   body:not(.orbi-model-catalog) .orbi-model-card:not(.orbi-model-featured) { display: none; }
@@ -266,7 +260,7 @@
     <div class="orbi-grid-2" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
       <a href="previews/clinica-odontologica.html" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; gap: 18px; color: inherit;">
         <div style="position: relative; aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #0c0000;">
-          <div class="orbi-site-load" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;background:#0c0000;"><span class="orbi-spin" style="width:26px;height:26px;border:2.5px solid rgba(255,45,45,0.25);border-top-color:#ff2d2d;border-radius:50%;animation:orbSpin .8s linear infinite;"></span></div><iframe data-site data-src="previews/clinica-odontologica.html" title="Site odontologia" loading="lazy" scrolling="no" style="position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; transform: scale(0.4); transform-origin: top left; pointer-events: none;"></iframe>
+          <img src="assets/portfolio-previews/odontologia.jpg" alt="Prévia original da Clínica Odontológica" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
         </div>
         <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
           <h3 style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 21px; color: #ffffff;">Clínica Odontológica</h3>
@@ -276,7 +270,7 @@
       </a>
       <a href="https://brilliant-shortbread-ae4057.netlify.app/" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; gap: 18px; color: inherit;">
         <div style="position: relative; aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #0c0000;">
-          <div class="orbi-site-load" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;background:#0c0000;"><span class="orbi-spin" style="width:26px;height:26px;border:2.5px solid rgba(255,45,45,0.25);border-top-color:#ff2d2d;border-radius:50%;animation:orbSpin .8s linear infinite;"></span></div><iframe data-site data-src="https://brilliant-shortbread-ae4057.netlify.app/" title="Site clínica de estética" loading="lazy" scrolling="no" style="position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; transform: scale(0.4); transform-origin: top left; pointer-events: none;"></iframe>
+          <img src="assets/portfolio-previews/estetica.jpg" alt="Prévia original da Clínica de Estética" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
         </div>
         <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
           <h3 style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 21px; color: #ffffff;">Clínica de Estética</h3>
@@ -286,7 +280,7 @@
       </a>
       <a href="previews/legalink/advocacia.html" target="_blank" rel="noopener noreferrer" style="display: flex; flex-direction: column; gap: 18px; color: inherit;">
         <div style="position: relative; aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #0c0000;">
-          <div class="orbi-site-load" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;background:#0c0000;"><span class="orbi-spin" style="width:26px;height:26px;border:2.5px solid rgba(255,45,45,0.25);border-top-color:#ff2d2d;border-radius:50%;animation:orbSpin .8s linear infinite;"></span></div><iframe data-site data-src="previews/legalink/advocacia.html" title="Site de advocacia" loading="lazy" scrolling="no" style="position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; transform: scale(0.4); transform-origin: top left; pointer-events: none;"></iframe>
+          <img src="assets/portfolio-previews/advocacia.jpg" alt="Prévia original do site de Advocacia" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:top center;">
         </div>
         <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
           <h3 style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 21px; color: #ffffff;">Advocacia</h3>
@@ -311,40 +305,40 @@
     </div>
     <div class="orbi-model-grid" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;">
       <a class="orbi-model-card" href="previews/modelos/pagina-03/" target="_blank" rel="noopener noreferrer" style="--accent:#ff5a36;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ff9a85;">MODELO 01</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Tráfego e leads</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Captação com oferta direta</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ff9a85;">MODELO 01</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-01.jpg" alt="Prévia original do Modelo 01 — Tráfego e leads" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Tráfego e leads</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Captação com oferta direta</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-11/" target="_blank" rel="noopener noreferrer" style="--accent:#ffbd4a;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffd891;">MODELO 02</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Página de vendas</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Oferta, prova e conversão</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffd891;">MODELO 02</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-02.jpg" alt="Prévia original do Modelo 02 — Página de vendas" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Página de vendas</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Oferta, prova e conversão</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-13/" target="_blank" rel="noopener noreferrer" style="--accent:#a88cff;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#c9b8ff;">MODELO 03</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Posicionamento</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Presença que gera autoridade</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#c9b8ff;">MODELO 03</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-03.jpg" alt="Prévia original do Modelo 03 — Posicionamento" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Posicionamento</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Presença que gera autoridade</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-15/" target="_blank" rel="noopener noreferrer" style="--accent:#59d6ff;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#9ae5ff;">MODELO 04</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Produto digital</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Lançamentos e treinamentos</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#9ae5ff;">MODELO 04</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-04.jpg" alt="Prévia original do Modelo 04 — Produto digital" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Produto digital</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Lançamentos e treinamentos</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-18/" target="_blank" rel="noopener noreferrer" style="--accent:#58e08a;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#91f0b1;">MODELO 05</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Fluxo inteligente</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Tecnologia que trabalha por você</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#91f0b1;">MODELO 05</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-05.jpg" alt="Prévia original do Modelo 05 — Fluxo inteligente" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Fluxo inteligente</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Tecnologia que trabalha por você</p></div>
       </a>
       <a class="orbi-model-card orbi-model-featured orbi-model-featured-sale" href="previews/modelos/pagina-19/" target="_blank" rel="noopener noreferrer" style="--accent:#fc658d;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffacc0;">MODELO 06</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Oferta comercial</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Estrutura para vender mais</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffacc0;">MODELO 06</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-06.jpg" alt="Prévia original do Modelo 06 — Oferta comercial" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Oferta comercial</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Estrutura para vender mais</p></div>
       </a>
       <a class="orbi-model-card orbi-model-featured orbi-model-featured-social" href="previews/modelos/pagina-20/" target="_blank" rel="noopener noreferrer" style="--accent:#ff7a45;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffb29a;">MODELO 07</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Marca nas redes</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Conteúdo e posicionamento</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffb29a;">MODELO 07</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-07.jpg" alt="Prévia original do Modelo 07 — Marca nas redes" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Marca nas redes</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Conteúdo e posicionamento</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-22/" target="_blank" rel="noopener noreferrer" style="--accent:#d586ff;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#eabaff;">MODELO 08</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Profissional de saúde</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Acolhimento e credibilidade</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#eabaff;">MODELO 08</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-08.jpg" alt="Prévia original do Modelo 08 — Profissional de saúde" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Profissional de saúde</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Acolhimento e credibilidade</p></div>
       </a>
       <a class="orbi-model-card orbi-model-featured orbi-model-featured-clinic" href="previews/modelos/pagina-23/" target="_blank" rel="noopener noreferrer" style="--accent:#67c8ff;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#a6e2ff;">MODELO 09</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Serviço médico</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Informação clara e confiança</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#a6e2ff;">MODELO 09</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-09.jpg" alt="Prévia original do Modelo 09 — Serviço médico" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Serviço médico</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Informação clara e confiança</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-24/" target="_blank" rel="noopener noreferrer" style="--accent:#8cf06a;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#bbffab;">MODELO 10</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Consultoria em IA</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Solução digital para empresas</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#bbffab;">MODELO 10</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-10.jpg" alt="Prévia original do Modelo 10 — Consultoria em IA" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Consultoria em IA</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Solução digital para empresas</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-25/" target="_blank" rel="noopener noreferrer" style="--accent:#ff6464;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffadad;">MODELO 11</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Página expressa</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Modelo direto e objetivo</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffadad;">MODELO 11</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-11.jpg" alt="Prévia original do Modelo 11 — Página expressa" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Página expressa</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Modelo direto e objetivo</p></div>
       </a>
       <a class="orbi-model-card" href="previews/modelos/pagina-28/" target="_blank" rel="noopener noreferrer" style="--accent:#ffb14b;">
-        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffd494;">MODELO 12</span><div class="orbi-model-window" style="margin-top:16px;"><span></span><span></span><span></span><span></span></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Gestão de tráfego</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Estratégia para escalar campanhas</p></div>
+        <div class="orbi-model-top"><span style="font:700 11px 'Orbitron',sans-serif;letter-spacing:.15em;color:#ffd494;">MODELO 12</span><div class="orbi-model-window" style="margin-top:16px;"><img src="assets/model-previews/model-12.jpg" alt="Prévia original do Modelo 12 — Gestão de tráfego" loading="lazy" decoding="async"></div></div><div class="orbi-model-bottom"><h3 style="margin:0;font-size:21px;">Gestão de tráfego</h3><p style="margin:6px 0 0;color:rgba(255,255,255,.58);font-size:13px;">Estratégia para escalar campanhas</p></div>
       </a>
     </div>
   </div>
@@ -1988,73 +1982,6 @@ document.addEventListener('DOMContentLoaded', function(){
         }, { threshold: 0.2 });
         rio.observe(servList);
       } else { playRows(); }
-    }
-    // Poster leve enquanto o site original é carregado. Para estabilidade,
-    // apenas as prévias visíveis permanecem executando dentro da página.
-    const modelCards = document.querySelectorAll('.orbi-model-card');
-    modelCards.forEach((card, index) => {
-      const preview = card.querySelector('.orbi-model-window');
-      const title = card.querySelector('h3');
-      if (!preview) return;
-      const image = document.createElement('img');
-      image.src = 'assets/model-previews/model-' + String(index + 1).padStart(2, '0') + '.jpg';
-      image.alt = 'Prévia do ' + (title ? title.textContent.trim() : 'modelo Orbi');
-      image.loading = 'lazy';
-      image.decoding = 'async';
-      preview.replaceChildren(image);
-      const source = card.getAttribute('href');
-      if (!source) return;
-      const frame = document.createElement('iframe');
-      frame.className = 'orbi-model-live';
-      frame.src = source;
-      frame.title = 'Demonstração: ' + (title ? title.textContent.trim() : 'modelo Orbi');
-      frame.loading = 'eager';
-      frame.setAttribute('scrolling', 'no');
-      frame.setAttribute('sandbox', 'allow-same-origin');
-      frame.addEventListener('load', () => {
-        frame.style.opacity = '1';
-        image.style.opacity = '0';
-      }, { once: true });
-      preview.appendChild(frame);
-    });
-    const frames = document.querySelectorAll('iframe[data-site]');
-    frames.forEach((f) => { f.style.opacity = '0'; f.style.transition = 'opacity .55s ease'; });
-    const mount = (f) => {
-      if (f.dataset.mounted) return;
-      f.dataset.mounted = '1';
-      const loader = f.parentElement.querySelector('.orbi-site-load');
-      const show = () => { f.style.opacity = '1'; if (loader) { loader.style.transition = 'opacity .4s ease'; loader.style.opacity = '0'; setTimeout(() => loader.remove(), 450); } };
-      f.addEventListener('load', show);
-      setTimeout(show, 6000);
-      f.src = f.dataset.src;
-    };
-    if ('IntersectionObserver' in window) {
-      const queue = [];
-      const maxParallel = 3;
-      let active = 0;
-      const next = () => {
-        while (active < maxParallel && queue.length) {
-          const f = queue.shift();
-          active += 1;
-          let settled = false;
-          const done = () => {
-            if (settled) return;
-            settled = true;
-            active -= 1;
-            setTimeout(next, 100);
-          };
-          f.addEventListener('load', done, { once: true });
-          f.addEventListener('error', done, { once: true });
-          setTimeout(done, 5000);
-          mount(f);
-        }
-      };
-      const fio = new IntersectionObserver((ents) => {
-        ents.forEach((e) => { if (e.isIntersecting) { queue.push(e.target); fio.unobserve(e.target); next(); } });
-      }, { rootMargin: '550px 0px' });
-      frames.forEach((f) => fio.observe(f));
-    } else {
-      frames.forEach(mount);
     }
     if ('IntersectionObserver' in window) {
       const els = document.querySelectorAll('[data-reveal], .orbi-grid-2 > a, .orbi-grid-serv > div, .orbi-grid-steps > div, .orbi-plans > div, .orbi-pain-card, .orbi-mini-item');
