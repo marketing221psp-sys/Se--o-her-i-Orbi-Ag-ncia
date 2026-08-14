@@ -104,6 +104,20 @@
     .orbi-wa { padding: 6px !important; }
     .orbi-model-grid { grid-template-columns: 1fr !important; }
   }
+  @media (max-width: 767px) {
+    .orbi-hero { min-height: 100svh !important; }
+    .orbi-hero-content { justify-content: flex-start !important; padding: 14px 20px 28px !important; }
+    .orbi-hero-eyebrow { font-size: 10px !important; letter-spacing: .18em !important; }
+    .orbi-hero-h1 { margin-top: 10px !important; font-size: clamp(42px, 12vw, 48px) !important; line-height: .9 !important; }
+    .orbi-hero-outline { color: rgba(255,255,255,.88) !important; -webkit-text-stroke: 0 transparent !important; }
+    .orbi-hero-p { margin-top: 12px !important; max-width: 340px !important; font-size: 14px !important; line-height: 1.4 !important; }
+    .orbi-cta-row { flex-direction: column !important; flex-wrap: nowrap !important; gap: 10px !important; margin-top: 16px !important; max-width: 360px !important; }
+    .orbi-hero-primary-wrap { width: 100% !important; }
+    .orbi-hero-primary { width: 100% !important; min-height: 48px !important; box-sizing: border-box !important; justify-content: center !important; padding: 13px 18px !important; font-size: 15px !important; }
+    .orbi-hero-microcopy { margin-top: 6px !important; font-size: 13px !important; line-height: 1.3 !important; }
+    .orbi-hero-secondary { width: 100% !important; min-height: 44px !important; box-sizing: border-box !important; justify-content: center !important; padding: 11px 18px !important; font-size: 14px !important; }
+    .orbi-stats { margin-top: 22px !important; }
+  }
 [data-hv="1"]:hover { background: #ffece9 !important; color: #c50200 !important; box-shadow: 0 0 0 1px #ffffff, 0 0 30px rgba(255,255,255,0.55) !important; }
 [data-hv="2"]:hover { background: #ffece9 !important; }
 [data-hv="3"]:hover { border-color: #ffffff !important; background: rgba(255,255,255,0.08) !important; }
@@ -159,7 +173,7 @@
 </style>
 </head>
 <body style="margin:0">
-<div style="position: relative; width: 100%; min-height: 100vh; overflow: hidden; display: flex; flex-direction: column; background: radial-gradient(120% 110% at 14% 12%, #ff2408 0%, #e60d00 22%, #b60300 45%, #6d0100 70%, #240000 100%); font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased;">
+<div class="orbi-hero" style="position: relative; width: 100%; min-height: 100vh; overflow: hidden; display: flex; flex-direction: column; background: radial-gradient(120% 110% at 14% 12%, #ff2408 0%, #e60d00 22%, #b60300 45%, #6d0100 70%, #240000 100%); font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased;">
 
   <video id="heroVid" data-src="https://res.cloudinary.com/ldxkye73/video/upload/Television_powers_on_red_glow_202608071445_c2jprj.mp4" autoplay muted loop playsinline preload="auto" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 1; filter: saturate(1.2) contrast(1.05) brightness(0.82);">
   </video>
@@ -189,17 +203,20 @@
     <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="orbi-cta-nav" style="display: inline-flex; align-items: center; gap: 9px; background: #ffffff; color: #c50200; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; padding: 15px 26px; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255,255,255,0.6), 0 0 22px rgba(255,255,255,0.35);" data-hv="1">Falar com especialista <span style="display: inline-block; transform: translateY(1px);">→</span></a>
   </nav>
 
-  <div style="position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px 76px;">
-    <span style="font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: #ffd7d2;">Sites estratégicos para empresas</span>
+  <div class="orbi-hero-content" style="position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px 76px;">
+    <span class="orbi-hero-eyebrow" style="font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: #ffd7d2;">Sites estratégicos para empresas</span>
     <h1 class="orbi-hero-h1" style="margin: 20px 0 0; max-width: 1100px; font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.88; font-size: clamp(58px, 10vw, 156px); color: #ffffff;">
-      Sites bonitos<br><span style="color: transparent; -webkit-text-stroke: 2px #ffffff;">que fazem vender.</span>
+      Sites bonitos<br><span class="orbi-hero-outline" style="color: transparent; -webkit-text-stroke: 2px #ffffff;">que fazem vender.</span>
     </h1>
-    <p class="orbi-hero-p" style="margin: 24px 0 0; max-width: 580px; text-align: center; font-family: 'Archivo', sans-serif; font-weight: 500; font-size: clamp(14px, 0.9vw, 16px); line-height: 1.55; color: rgba(255,255,255,0.86);">Transformamos a presença digital da sua empresa em uma ferramenta de confiança, contatos e vendas, com design sob medida e estratégia desde a primeira conversa.</p>
+    <p class="orbi-hero-p" style="margin: 24px 0 0; max-width: 580px; text-align: center; font-family: 'Archivo', sans-serif; font-weight: 500; font-size: clamp(14px, 0.9vw, 16px); line-height: 1.55; color: rgba(255,255,255,0.86);">Criamos sites estratégicos que geram confiança, contatos e vendas para a sua empresa.</p>
     <div class="orbi-cta-row" style="display: flex; align-items: center; gap: 18px; margin-top: 40px;">
-      <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; padding: 17px 34px; border-radius: 999px;" data-hv="2">Receber orçamento no WhatsApp
-        <span style="display: inline-block; transform: translateY(1px);">→</span>
-      </a>
-      <a href="#portfolio" style="display: inline-flex; align-items: center; background: transparent; color: #ffffff; font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 18px; padding: 17px 30px; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px;" data-hv="3">Ver portfólio</a>
+      <div class="orbi-hero-primary-wrap" style="display: flex; flex-direction: column; align-items: center;">
+        <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="orbi-hero-primary" aria-label="Quero receber uma proposta para o meu site pelo WhatsApp" data-cta="hero-primary" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; padding: 17px 34px; border-radius: 999px;" data-hv="2">Quero uma proposta pro meu site
+          <span aria-hidden="true" style="display: inline-block; transform: translateY(1px);">→</span>
+        </a>
+        <small class="orbi-hero-microcopy" style="display: block; margin-top: 8px; font-family: 'Archivo', sans-serif; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.72);">Resposta no WhatsApp em até 10 min · Sem compromisso</small>
+      </div>
+      <a href="#portfolio" class="orbi-hero-secondary" aria-label="Ver o portfólio de sites da Orbi" data-cta="hero-secondary" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; background: transparent; color: rgba(255,255,255,.78); font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 17px; padding: 14px 27px; border: 1.5px solid rgba(255,255,255,.32); border-radius: 999px;" data-hv="3">Ver portfólio</a>
     </div>
     <div class="orbi-stats" style="display: flex; align-items: center; gap: 52px; margin-top: 54px; font-family: 'Archivo', sans-serif;">
       <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
