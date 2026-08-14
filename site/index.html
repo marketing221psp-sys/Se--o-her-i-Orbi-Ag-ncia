@@ -160,6 +160,16 @@
   body:not(.orbi-model-catalog) .orbi-model-featured-social { order: 1; }
   body:not(.orbi-model-catalog) .orbi-model-featured-clinic { order: 2; }
   body:not(.orbi-model-catalog) .orbi-model-featured-sale { order: 3; }
+  /* O catálogo usa exatamente a mesma linguagem visual das prévias do portfólio. */
+  body.orbi-model-catalog .orbi-model-card { min-height: 0; padding: 0; gap: 18px; overflow: visible; border: 0; border-radius: 0; background: transparent; }
+  body.orbi-model-catalog .orbi-model-card::before,
+  body.orbi-model-catalog .orbi-model-card::after { display: none; }
+  body.orbi-model-catalog .orbi-model-card:hover { transform: translateY(-5px); box-shadow: none; }
+  body.orbi-model-catalog .orbi-model-top { display: contents; }
+  body.orbi-model-catalog .orbi-model-top > span { display: none; }
+  body.orbi-model-catalog .orbi-model-window { order: -1; height: auto; aspect-ratio: 16 / 10; margin-top: 0 !important; border-radius: 18px; }
+  body.orbi-model-catalog .orbi-model-bottom h3 { font-family: 'Orbitron', sans-serif; font-size: 21px !important; }
+  body.orbi-model-catalog .orbi-model-bottom p { font-size: 14px !important; line-height: 1.5; }
   .orbi-faq details { border-top: 1px solid rgba(255,255,255,.16); }
   .orbi-faq details:last-child { border-bottom: 1px solid rgba(255,255,255,.16); }
   .orbi-faq summary { list-style: none; cursor: pointer; }
