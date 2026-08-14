@@ -2002,69 +2002,21 @@ document.addEventListener('DOMContentLoaded', function(){
       image.loading = 'lazy';
       image.decoding = 'async';
       preview.replaceChildren(image);
+      const source = card.getAttribute('href');
+      if (!source) return;
+      const frame = document.createElement('iframe');
+      frame.className = 'orbi-model-live';
+      frame.src = source;
+      frame.title = 'Demonstração: ' + (title ? title.textContent.trim() : 'modelo Orbi');
+      frame.loading = 'eager';
+      frame.setAttribute('scrolling', 'no');
+      frame.setAttribute('sandbox', 'allow-same-origin');
+      frame.addEventListener('load', () => {
+        frame.style.opacity = '1';
+        image.style.opacity = '0';
+      }, { once: true });
+      preview.appendChild(frame);
     });
-    const modelWindows = document.querySelectorAll('.orbi-model-window');
-    if ('IntersectionObserver' in window) {
-      const maxLiveModels = window.matchMedia('(max-width: 767px)').matches ? 1 : 3;
-      const activeModels = new Map();
-      const waitingModels = new Set();
-      const unmountModel = (preview) => {
-        const frame = activeModels.get(preview);
-        if (!frame) return;
-        frame.remove();
-        activeModels.delete(preview);
-        const poster = preview.querySelector('img');
-        if (poster) poster.style.opacity = '1';
-      };
-      const mountModel = (preview) => {
-        if (activeModels.has(preview) || activeModels.size >= maxLiveModels) return;
-        const card = preview.closest('.orbi-model-card');
-        const source = card && card.getAttribute('href');
-        if (!source) return;
-        const frame = document.createElement('iframe');
-        frame.className = 'orbi-model-live';
-        frame.src = source;
-        frame.title = 'Demonstração: ' + ((card.querySelector('h3') || {}).textContent || 'modelo Orbi').trim();
-        frame.loading = 'eager';
-        frame.setAttribute('scrolling', 'no');
-        frame.addEventListener('load', () => {
-          frame.style.opacity = '1';
-          const poster = preview.querySelector('img');
-          if (poster) poster.style.opacity = '0';
-        }, { once: true });
-        activeModels.set(preview, frame);
-        preview.appendChild(frame);
-      };
-      const drainModels = () => {
-        for (const preview of waitingModels) {
-          if (activeModels.size >= maxLiveModels) break;
-          waitingModels.delete(preview);
-          mountModel(preview);
-        }
-      };
-      const previewObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) waitingModels.add(entry.target);
-          else {
-            waitingModels.delete(entry.target);
-            unmountModel(entry.target);
-          }
-        });
-        drainModels();
-      }, { rootMargin: '80px 0px', threshold: 0.12 });
-      modelWindows.forEach((preview) => previewObserver.observe(preview));
-    } else {
-      modelWindows.forEach((preview, index) => {
-        if (index > 0) return;
-        const card = preview.closest('.orbi-model-card');
-        const frame = document.createElement('iframe');
-        frame.className = 'orbi-model-live';
-        frame.src = card.getAttribute('href');
-        frame.title = 'Demonstração do modelo Orbi';
-        frame.addEventListener('load', () => { frame.style.opacity = '1'; }, { once: true });
-        preview.appendChild(frame);
-      });
-    }
     const frames = document.querySelectorAll('iframe[data-site]');
     frames.forEach((f) => { f.style.opacity = '0'; f.style.transition = 'opacity .55s ease'; });
     const mount = (f) => {
