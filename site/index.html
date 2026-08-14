@@ -26,10 +26,6 @@
   .orbi-pain-card.reveal.in { opacity: 1; transform: none; }
   @keyframes orbA { to { transform: rotate(360deg); } }
   @keyframes orbSpin { to { transform: rotate(360deg); } }
-  @keyframes orbiPreviewScroll {
-    0%, 12% { transform: scale(1.01) translate3d(0, 0, 0); }
-    88%, 100% { transform: scale(1.16) translate3d(0, -7%, 0); }
-  }
   .orbi-mini-item:hover .orbi-mini-ico { transform: scale(1.1); box-shadow: 0 14px 34px rgba(0,0,0,0.5); }
   @property --holoA { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
   @keyframes holoSweep { to { --holoA: 360deg; } }
@@ -146,13 +142,10 @@
   .orbi-model-window { position: relative; display: flex; flex-direction: column; gap: 8px; width: 100%; height: 136px; overflow: hidden; padding: 0; box-sizing: border-box; border-radius: 11px; background: #0c0000; border: 1px solid rgba(255,255,255,.12); }
   .orbi-model-window > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: opacity .3s ease; }
   .orbi-model-window > img,
-  #portfolio .orbi-grid-2 > a > div:first-child > img { transform-origin: top center; will-change: transform; animation: orbiPreviewScroll 10s ease-in-out infinite alternate; }
-  .orbi-model-grid > a:nth-child(3n + 2) .orbi-model-window > img,
-  #portfolio .orbi-grid-2 > a:nth-child(2) > div:first-child > img { animation-delay: -3.3s; }
-  .orbi-model-grid > a:nth-child(3n + 3) .orbi-model-window > img,
-  #portfolio .orbi-grid-2 > a:nth-child(3) > div:first-child > img { animation-delay: -6.6s; }
-  .orbi-model-card:hover .orbi-model-window > img,
-  #portfolio .orbi-grid-2 > a:hover > div:first-child > img { animation-duration: 6s; }
+  #portfolio .orbi-grid-2 > a > div:first-child > img { transition: opacity .35s ease; }
+  .orbi-live-preview { position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; opacity: 0; transform: scale(.4); transform-origin: top left; pointer-events: none; background: #0c0000; transition: opacity .35s ease; }
+  .orbi-live-preview.is-loaded { opacity: 1; }
+  .orbi-preview-live > img { opacity: 0; }
   /* Na home, três referências ganham a mesma leitura limpa do portfólio.
      O catálogo completo é acessado por ?catalogo=1#modelos. */
   body:not(.orbi-model-catalog) .orbi-model-card:not(.orbi-model-featured) { display: none; }
@@ -1994,6 +1987,58 @@ document.addEventListener('DOMContentLoaded', function(){
         }, { threshold: 0.2 });
         rio.observe(servList);
       } else { playRows(); }
+    }
+    // Prévia real: somente os cards presentes na tela executam o site original.
+    // Isso evita manter 15 páginas pesadas abertas ao mesmo tempo.
+    const previewTargets = [
+      ...document.querySelectorAll('.orbi-model-window'),
+      ...document.querySelectorAll('#portfolio .orbi-grid-2 > a > div:first-child')
+    ];
+    const activePreviews = new Map();
+    const maxLivePreviews = window.matchMedia('(max-width: 767px)').matches ? 2 : 3;
+    const stopPreview = (target) => {
+      const frame = activePreviews.get(target);
+      if (!frame) return;
+      frame.src = 'about:blank';
+      frame.remove();
+      activePreviews.delete(target);
+      target.classList.remove('orbi-preview-live');
+    };
+    const startPreview = (target) => {
+      if (activePreviews.has(target)) return;
+      while (activePreviews.size >= maxLivePreviews) {
+        stopPreview(activePreviews.keys().next().value);
+      }
+      const card = target.closest('a');
+      const source = card && card.href;
+      if (!source) return;
+      const frame = document.createElement('iframe');
+      frame.className = 'orbi-live-preview';
+      frame.src = source;
+      frame.loading = 'eager';
+      frame.scrolling = 'no';
+      frame.tabIndex = -1;
+      frame.setAttribute('aria-hidden', 'true');
+      frame.title = 'Prévia ao vivo';
+      frame.addEventListener('load', () => {
+        if (!activePreviews.has(target)) return;
+        frame.classList.add('is-loaded');
+        target.classList.add('orbi-preview-live');
+      }, { once: true });
+      frame.addEventListener('error', () => stopPreview(target), { once: true });
+      activePreviews.set(target, frame);
+      target.appendChild(frame);
+    };
+    if ('IntersectionObserver' in window) {
+      const previewObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) startPreview(entry.target);
+          else stopPreview(entry.target);
+        });
+      }, { rootMargin: '140px 0px', threshold: 0.12 });
+      previewTargets.forEach((target) => previewObserver.observe(target));
+    } else {
+      previewTargets.slice(0, maxLivePreviews).forEach(startPreview);
     }
     if ('IntersectionObserver' in window) {
       const els = document.querySelectorAll('[data-reveal], .orbi-grid-2 > a, .orbi-grid-serv > div, .orbi-grid-steps > div, .orbi-plans > div, .orbi-pain-card, .orbi-mini-item');
