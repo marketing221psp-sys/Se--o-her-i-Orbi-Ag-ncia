@@ -21,14 +21,19 @@ src="https://www.facebook.com/tr?id=4466194993662260&ev=PageView&noscript=1"
 <!-- OpenAI Advertising Pixel Code -->
 <script>
 !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
-oaiq("init",{pixelId:"36JDGGvR4sRuQzQLwJp2iS",debug:true});
+oaiq("init",{pixelId:"36JDGGvR4sRuQzQLwJp2iS"});
 function orbiMeasureMessage(){
-  oaiq(
-    "measure",
-    "custom",
-    { type: "custom" },
-    { custom_event_name: "mensagem" }
-  );
+  try {
+    if (typeof window.oaiq !== "function") return;
+    window.oaiq(
+      "measure",
+      "custom",
+      { type: "custom" },
+      { custom_event_name: "mensagem" }
+    );
+  } catch (_) {
+    // A medição nunca deve impedir a abertura do WhatsApp.
+  }
 }
 </script>
 <!-- End OpenAI Advertising Pixel Code -->
