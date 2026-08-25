@@ -180,17 +180,22 @@ function orbiMeasureMessage(){
     .orbi-nav.is-menu-open .orbi-menu-toggle > span:nth-child(2) { opacity: 0; }
     .orbi-nav.is-menu-open .orbi-menu-toggle > span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .orbi-hero { min-height: 100svh !important; }
-    .orbi-hero-content { justify-content: center !important; padding: 14px 20px 28px !important; }
+    .orbi-hero-content { align-items: center !important; justify-content: center !important; padding: 14px 20px 28px !important; text-align: center !important; }
+    .orbi-hero-split { grid-template-columns: 1fr !important; gap: 26px !important; width: 100% !important; justify-items: center !important; }
+    .orbi-hero-split > div { align-items: center !important; padding-left: 0 !important; text-align: center !important; width: min(100%, 420px) !important; }
+    .orbi-hero-rule { display: none !important; }
     .orbi-hero-eyebrow { display: none !important; }
     .orbi-hero-h1 { margin-top: 10px !important; font-size: clamp(42px, 12vw, 48px) !important; line-height: .9 !important; }
     .orbi-hero-outline { color: rgba(255,255,255,.88) !important; -webkit-text-stroke: 0 transparent !important; }
-    .orbi-hero-p { margin-top: 12px !important; max-width: 340px !important; font-size: 14px !important; line-height: 1.4 !important; }
-    .orbi-cta-row { flex-direction: column !important; flex-wrap: nowrap !important; gap: 10px !important; margin-top: 16px !important; max-width: 360px !important; }
+    .orbi-hero-p { margin: 0 auto !important; max-width: 340px !important; font-size: 14px !important; line-height: 1.4 !important; text-align: center !important; }
+    .orbi-cta-row { flex-direction: column !important; flex-wrap: nowrap !important; align-items: center !important; gap: 10px !important; margin: 16px auto 0 !important; max-width: 360px !important; width: 100% !important; }
     .orbi-hero-primary-wrap { width: 100% !important; }
     .orbi-hero-primary { width: 100% !important; min-height: 48px !important; box-sizing: border-box !important; justify-content: center !important; padding: 13px 18px !important; font-size: 15px !important; }
     .orbi-hero-microcopy { margin-top: 6px !important; font-size: 13px !important; line-height: 1.3 !important; }
     .orbi-hero-secondary { width: 100% !important; min-height: 44px !important; box-sizing: border-box !important; justify-content: center !important; padding: 11px 18px !important; font-size: 14px !important; }
-    .orbi-stats { margin-top: 22px !important; }
+    .orbi-hero-trust { justify-content: center !important; text-align: center !important; }
+    .orbi-hero-link { align-self: center !important; }
+    .orbi-stats { justify-content: center !important; margin-top: 22px !important; text-align: center !important; }
     .orbi-sec { text-align: center !important; }
     .orbi-sec h2 { max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; font-size: clamp(34px, 10vw, 44px) !important; line-height: 1 !important; text-align: center !important; text-wrap: balance; }
     .orbi-sec h3, .orbi-sec p { text-align: center !important; text-wrap: pretty; }
