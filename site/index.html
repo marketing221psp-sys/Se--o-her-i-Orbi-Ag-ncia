@@ -779,7 +779,7 @@ function orbiMeasureMessage(){
           <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55);">Menu</span>
           <a href="#solucoes" style="font-size: 16px;">Soluções</a>
           <a href="#portfolio" style="font-size: 16px;">Portfólio</a>
-          <a href="?catalogo=1#modelos" style="font-size: 16px;">Modelos</a>
+    <a href="?catalogo=1#modelos" style="font-size: 16px;">Modelos</a>
           <a href="#faq" style="font-size: 16px;">Dúvidas frequentes</a>
           <a href="#contato" style="font-size: 16px;">Contato</a>
         </div>
@@ -826,8 +826,18 @@ function orbiMeasureMessage(){
   setInterval(function(){ if (el.paused) go(); }, 2000);
 })();
 document.addEventListener('DOMContentLoaded', function(){
-    if (new URLSearchParams(window.location.search).has('catalogo')) {
+    const catalogMode = new URLSearchParams(window.location.search).has('catalogo');
+    if (catalogMode) {
       document.body.classList.add('orbi-model-catalog');
+      if (window.location.hash === '#modelos') {
+        const focusCatalog = () => {
+          const catalogSection = document.getElementById('modelos');
+          if (catalogSection) window.scrollTo(0, catalogSection.getBoundingClientRect().top + window.scrollY);
+        };
+        requestAnimationFrame(() => requestAnimationFrame(focusCatalog));
+        window.setTimeout(focusCatalog, 450);
+        window.setTimeout(focusCatalog, 1000);
+      }
     }
 
     const mobileNav = document.querySelector('.orbi-nav');
