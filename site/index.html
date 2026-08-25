@@ -22,12 +22,13 @@ src="https://www.facebook.com/tr?id=4466194993662260&ev=PageView&noscript=1"
 <script>
 !function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");
 oaiq("init",{pixelId:"36JDGGvR4sRuQzQLwJp2iS",debug:true});
-function orbiMeasureRegistration(){
-  oaiq("measure", "registration_completed", {
-    type: "customer_action",
-    amount: 0,
-    currency: "USD"
-  });
+function orbiMeasureMessage(){
+  oaiq(
+    "measure",
+    "custom",
+    { type: "custom" },
+    { custom_event_name: "mensagem" }
+  );
 }
 </script>
 <!-- End OpenAI Advertising Pixel Code -->
@@ -260,7 +261,7 @@ function orbiMeasureRegistration(){
       <a href="?catalogo=1#modelos">Modelos</a>
       <a href="#processo">Como funciona</a>
     </div>
-    <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureRegistration();" class="orbi-cta-nav" style="display: inline-flex; align-items: center; gap: 9px; background: #ffffff; color: #c50200; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; padding: 15px 26px; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255,255,255,0.6), 0 0 22px rgba(255,255,255,0.35);" data-hv="1">Falar com especialista <span style="display: inline-block; transform: translateY(1px);">→</span></a>
+    <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureMessage();" class="orbi-cta-nav" style="display: inline-flex; align-items: center; gap: 9px; background: #ffffff; color: #c50200; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; padding: 15px 26px; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255,255,255,0.6), 0 0 22px rgba(255,255,255,0.35);" data-hv="1">Falar com especialista <span style="display: inline-block; transform: translateY(1px);">→</span></a>
   </nav>
 
   <div class="orbi-hero-content" style="position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px 76px;">
@@ -271,7 +272,7 @@ function orbiMeasureRegistration(){
     <p class="orbi-hero-p" style="margin: 24px 0 0; max-width: 580px; text-align: center; font-family: 'Archivo', sans-serif; font-weight: 500; font-size: clamp(14px, 0.9vw, 16px); line-height: 1.55; color: rgba(255,255,255,0.86);">Criamos sites estratégicos que geram confiança, contatos e vendas para a sua empresa.</p>
     <div class="orbi-cta-row" style="display: flex; align-items: center; gap: 18px; margin-top: 40px;">
       <div class="orbi-hero-primary-wrap" style="display: flex; flex-direction: column; align-items: center;">
-        <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureRegistration();" class="orbi-hero-primary" aria-label="Quero receber uma proposta para o meu site pelo WhatsApp" data-cta="hero-primary" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; padding: 17px 34px; border-radius: 999px;" data-hv="2">Quero uma proposta pro meu site
+        <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureMessage();" class="orbi-hero-primary" aria-label="Quero receber uma proposta para o meu site pelo WhatsApp" data-cta="hero-primary" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; padding: 17px 34px; border-radius: 999px;" data-hv="2">Quero uma proposta pro meu site
           <span aria-hidden="true" style="display: inline-block; transform: translateY(1px);">→</span>
         </a>
         <small class="orbi-hero-microcopy" style="display: block; margin-top: 8px; font-family: 'Archivo', sans-serif; font-size: 13px; line-height: 1.35; color: rgba(255,255,255,.72);">Resposta no WhatsApp em até 10 min · Sem compromisso</small>
@@ -427,7 +428,7 @@ function orbiMeasureRegistration(){
       </div>
     </div>
     <div data-reveal style="margin-top: 48px;">
-      <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureRegistration();" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; padding: 18px 38px; border-radius: 999px;" data-hv="4">Quero avaliar meu projeto <span>→</span></a>
+      <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureMessage();" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; padding: 18px 38px; border-radius: 999px;" data-hv="4">Quero avaliar meu projeto <span>→</span></a>
     </div>
   </div>
 </section>
@@ -647,7 +648,7 @@ function orbiMeasureRegistration(){
       <h2 style="margin: 0 0 24px; font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(48px, 7vw, 104px); line-height: 0.9; color: #ffffff;">Vamos transformar sua ideia em site?</h2>
       <p style="margin: 0 0 20px; font-size: 20px; line-height: 1.5; color: rgba(255,255,255,0.85);">Conte um pouco sobre a sua empresa e receba uma orientação inicial sem compromisso.</p>
       <p style="margin: 0 0 38px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,.65);">Você fala diretamente com a Orbi, sem formulário longo e sem resposta automática.</p>
-      <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureRegistration();" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-weight: 700; font-size: 18px; padding: 18px 38px; border-radius: 999px;" data-hv="10">Conversar pelo WhatsApp <span>→</span></a>
+      <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureMessage();" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #c50200; font-weight: 700; font-size: 18px; padding: 18px 38px; border-radius: 999px;" data-hv="10">Conversar pelo WhatsApp <span>→</span></a>
     </div>
     <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.2);">
       <div style="display: inline-flex; align-items: center; gap: 16px; color: #fff;">
@@ -664,7 +665,7 @@ function orbiMeasureRegistration(){
       <div class="orbi-foot-links" style="display: flex; gap: 56px; flex-wrap: wrap;">
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55);">Contato</span>
-          <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureRegistration();" style="font-size: 16px;">+55 11 94524-3736</a>
+          <a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureMessage();" style="font-size: 16px;">+55 11 94524-3736</a>
           <a href="mailto:suporte@orbiweb.online" style="font-size: 16px;">suporte@orbiweb.online</a>
           <a href="https://www.instagram.com/orbi_web/" target="_blank" rel="noopener noreferrer" style="font-size: 16px;">@orbi_web</a>
         </div>
@@ -685,7 +686,7 @@ function orbiMeasureRegistration(){
   </div>
 </section>
 
-<a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureRegistration();" title="Fale no WhatsApp" aria-label="Falar com a Orbi pelo WhatsApp" class="orbi-wa" style="position: fixed; z-index: 60; right: 22px; bottom: 22px; display: inline-flex; align-items: center; justify-content: center; gap: 0; padding: 6px; border-radius: 999px; background: #25D366; box-shadow: 0 10px 30px rgba(0,0,0,0.35); animation: waPulse 2.6s ease-in-out infinite;" data-hv="11">
+<a href="https://wa.me/5511945243736?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Orbi%20e%20gostaria%20de%20criar%20um%20site%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer" onclick="fbq('track', 'Contact');orbiMeasureMessage();" title="Fale no WhatsApp" aria-label="Falar com a Orbi pelo WhatsApp" class="orbi-wa" style="position: fixed; z-index: 60; right: 22px; bottom: 22px; display: inline-flex; align-items: center; justify-content: center; gap: 0; padding: 6px; border-radius: 999px; background: #25D366; box-shadow: 0 10px 30px rgba(0,0,0,0.35); animation: waPulse 2.6s ease-in-out infinite;" data-hv="11">
   <span style="width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex: none; line-height: 0;">
     <svg viewBox="0 0 32 32" width="27" height="27" fill="#ffffff" aria-hidden="true" style="display: block;"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7.7.7-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.3C6.2 9.9 10.6 5.5 16 5.5S25.8 9.9 25.8 15 21.4 24.8 16 24.8zm5.4-6.9c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
   </span>
