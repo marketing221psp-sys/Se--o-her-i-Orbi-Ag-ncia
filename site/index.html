@@ -96,6 +96,7 @@ function orbiMeasureMessage(){
   .orbi-project-proof-preview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: opacity .35s ease; }
   .orbi-project-proof-preview::after { content: ''; position: absolute; z-index: 2; left: 0; right: 0; top: -22%; height: 18%; pointer-events: none; background: linear-gradient(to bottom, transparent, rgba(255,74,57,.24), transparent); animation: proofScan 4.2s ease-in-out infinite; }
   @keyframes proofScan { 0%, 18% { transform: translateY(0); opacity: 0; } 28% { opacity: .8; } 70% { transform: translateY(680%); opacity: .45; } 82%, 100% { transform: translateY(680%); opacity: 0; } }
+  .orbi-menu-toggle { display: none; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -167,9 +168,20 @@ function orbiMeasureMessage(){
     .orbi-model-grid { grid-template-columns: 1fr !important; }
   }
   @media (max-width: 767px) {
+    .orbi-nav { display: grid !important; grid-template-columns: 1fr auto 1fr !important; justify-content: initial !important; justify-items: center !important; text-align: center !important; }
+    .orbi-logo { grid-column: 2 !important; justify-self: center !important; }
+    .orbi-cta-nav { display: none !important; }
+    .orbi-menu-toggle { grid-column: 3; grid-row: 1; align-self: center; justify-self: end; display: inline-flex; width: 42px; height: 42px; padding: 0; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; background: rgba(0,0,0,.2); flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
+    .orbi-menu-toggle > span { display: block; width: 18px; height: 2px; border-radius: 2px; background: #fff; transition: transform .25s ease, opacity .2s ease; }
+    .orbi-nav-menu { display: none !important; grid-column: 1 / -1 !important; grid-row: 2 !important; width: 100% !important; box-sizing: border-box !important; grid-template-columns: 1fr !important; justify-items: center !important; gap: 14px !important; margin-top: 4px !important; padding: 18px 0 4px !important; border-top: 1px solid rgba(255,255,255,.16); text-align: center !important; }
+    .orbi-nav-menu a { width: fit-content; text-align: center !important; }
+    .orbi-nav.is-menu-open .orbi-nav-menu { display: grid !important; }
+    .orbi-nav.is-menu-open .orbi-menu-toggle > span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .orbi-nav.is-menu-open .orbi-menu-toggle > span:nth-child(2) { opacity: 0; }
+    .orbi-nav.is-menu-open .orbi-menu-toggle > span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .orbi-hero { min-height: 100svh !important; }
     .orbi-hero-content { justify-content: center !important; padding: 14px 20px 28px !important; }
-    .orbi-hero-eyebrow { font-size: 10px !important; letter-spacing: .18em !important; }
+    .orbi-hero-eyebrow { display: none !important; }
     .orbi-hero-h1 { margin-top: 10px !important; font-size: clamp(42px, 12vw, 48px) !important; line-height: .9 !important; }
     .orbi-hero-outline { color: rgba(255,255,255,.88) !important; -webkit-text-stroke: 0 transparent !important; }
     .orbi-hero-p { margin-top: 12px !important; max-width: 340px !important; font-size: 14px !important; line-height: 1.4 !important; }
@@ -304,7 +316,10 @@ function orbiMeasureMessage(){
         <span class="lg-sub" style="font-weight: 600; font-size: 11px; letter-spacing: 0.58em; opacity: 0.85; margin-top: 5px; color: #ffffff;">AGÊNCIA</span>
       </span>
     </a>
-    <div class="orbi-nav-menu" style="display: flex; align-items: center; gap: 44px; font-size: 18px; font-weight: 500;">
+    <button type="button" class="orbi-menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="orbi-nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div id="orbi-nav-menu" class="orbi-nav-menu" style="display: flex; align-items: center; gap: 44px; font-size: 18px; font-weight: 500;">
       <a href="#solucoes">Soluções</a>
       <a href="#portfolio">Portfólio</a>
       <a href="?catalogo=1#modelos">Modelos</a>
@@ -813,6 +828,25 @@ function orbiMeasureMessage(){
 document.addEventListener('DOMContentLoaded', function(){
     if (new URLSearchParams(window.location.search).has('catalogo')) {
       document.body.classList.add('orbi-model-catalog');
+    }
+
+    const mobileNav = document.querySelector('.orbi-nav');
+    const menuToggle = document.querySelector('.orbi-menu-toggle');
+    if (mobileNav && menuToggle) {
+      const closeMenu = () => {
+        mobileNav.classList.remove('is-menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+      };
+      menuToggle.addEventListener('click', () => {
+        const willOpen = !mobileNav.classList.contains('is-menu-open');
+        mobileNav.classList.toggle('is-menu-open', willOpen);
+        menuToggle.setAttribute('aria-expanded', String(willOpen));
+        menuToggle.setAttribute('aria-label', willOpen ? 'Fechar menu' : 'Abrir menu');
+      });
+      mobileNav.querySelectorAll('.orbi-nav-menu a').forEach((link) => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+      window.matchMedia('(min-width: 768px)').addEventListener('change', (event) => { if (event.matches) closeMenu(); });
     }
 
     const stepsWrap = document.querySelector('.orbi-steps');
