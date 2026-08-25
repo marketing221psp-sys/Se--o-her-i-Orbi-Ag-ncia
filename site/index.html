@@ -90,9 +90,12 @@ function orbiMeasureMessage(){
   .orbi-pain-card:hover .orbi-holo-ring { animation-duration: 1.8s; }
   .orbi-problem-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .orbi-problem-card { position: relative; min-width: 0; overflow: hidden; padding: 28px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.018)); }
-  .orbi-project-proof { display: grid; grid-template-columns: minmax(240px, .85fr) 1.15fr; gap: 32px; align-items: center; margin: 0 0 42px; padding: 22px; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.02)); color: #fff; }
-  .orbi-project-proof:hover { color: #fff; border-color: rgba(255,45,45,.55); }
-  .orbi-project-proof img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top center; border-radius: 14px; }
+  .orbi-project-proof { display: grid; grid-template-columns: minmax(280px, 500px) 1fr; gap: 26px; align-items: center; width: min(100%, 980px); box-sizing: border-box; margin: 0 auto 34px; padding: 16px; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.02)); color: #fff; transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .orbi-project-proof:hover { color: #fff; border-color: rgba(255,45,45,.55); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,.28); }
+  .orbi-project-proof-preview { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 13px; background: #0c0000; }
+  .orbi-project-proof-preview img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: opacity .35s ease; }
+  .orbi-project-proof-preview::after { content: ''; position: absolute; z-index: 2; left: 0; right: 0; top: -22%; height: 18%; pointer-events: none; background: linear-gradient(to bottom, transparent, rgba(255,74,57,.24), transparent); animation: proofScan 4.2s ease-in-out infinite; }
+  @keyframes proofScan { 0%, 18% { transform: translateY(0); opacity: 0; } 28% { opacity: .8; } 70% { transform: translateY(680%); opacity: .45; } 82%, 100% { transform: translateY(680%); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -134,7 +137,7 @@ function orbiMeasureMessage(){
     .orbi-pain-card > p { margin-top: 10px !important; font-size: 15px !important; }
     .orbi-problem-grid { grid-template-columns: 1fr !important; }
     .orbi-problem-head { grid-template-columns: 1fr !important; gap: 22px !important; }
-    .orbi-project-proof { grid-template-columns: 1fr !important; gap: 20px !important; }
+    .orbi-project-proof { grid-template-columns: 1fr !important; gap: 18px !important; width: min(100%, 560px) !important; padding: 14px !important; }
     .orbi-grid-serv { grid-template-columns: 1fr !important; }
     .orbi-serv-05 { grid-column: auto !important; flex-direction: column !important; align-items: flex-start !important; gap: 18px !important; }
     .orbi-grid-steps { grid-template-columns: 1fr 1fr !important; }
@@ -496,23 +499,25 @@ function orbiMeasureMessage(){
   </div>
 </section>
 
-<section id="modelos" class="orbi-sec" style="position: relative; overflow: hidden; background: radial-gradient(72% 58% at 88% 0%, rgba(255,45,45,.18), transparent 68%), linear-gradient(180deg, #0d0101 0%, #130000 100%); font-family: 'Archivo', sans-serif; padding: 96px 56px;">
+<section id="modelos" class="orbi-sec" style="position: relative; overflow: hidden; background: radial-gradient(72% 58% at 88% 0%, rgba(255,45,45,.18), transparent 68%), linear-gradient(180deg, #0d0101 0%, #130000 100%); font-family: 'Archivo', sans-serif; padding: 72px 56px;">
   <div style="position:absolute; inset:0; pointer-events:none; opacity:.34; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);"></div>
   <div style="position: relative; max-width: 1240px; margin: 0 auto;">
-    <div data-reveal style="display:flex; align-items:end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:44px;">
-      <div style="max-width:720px;">
+    <div data-reveal style="display:flex; align-items:end; justify-content:space-between; gap:24px; flex-wrap:wrap; max-width:1100px; margin:0 auto 30px;">
+      <div style="max-width:650px;">
         <span style="display:inline-flex; align-items:center; gap:9px; color:#ff6254; font-family:'Orbitron',sans-serif; font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase;"><span style="width:7px;height:7px;border-radius:50%;background:#ff2d2d;box-shadow:0 0 14px #ff2d2d;"></span> Biblioteca Orbi</span>
-        <h2 style="margin:17px 0 14px; font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(40px,5vw,68px); line-height:.95; text-transform:uppercase; color:#fff;">Veja caminhos<br>antes de decidir</h2>
-        <p style="margin:0; max-width:620px; font-size:17px; line-height:1.55; color:rgba(255,255,255,.64);">Use as demonstrações como referência de direção. A versão final é adaptada à identidade, oferta e estratégia da sua empresa.</p>
+        <h2 style="margin:14px 0 12px; font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(36px,4vw,54px); line-height:.95; text-transform:uppercase; color:#fff;">Veja caminhos<br>antes de decidir</h2>
+        <p style="margin:0; max-width:590px; font-size:16px; line-height:1.5; color:rgba(255,255,255,.64);">Use as demonstrações como referência de direção. A versão final é adaptada à identidade, oferta e estratégia da sua empresa.</p>
       </div>
       <a href="?catalogo=1#modelos" style="display:inline-flex;align-items:center;gap:10px;padding:13px 19px;border:1px solid rgba(255,255,255,.38);border-radius:999px;font-size:14px;font-weight:700;white-space:nowrap;">Ver modelos <span class="orbi-models-arrow" style="color:#ff6254;font-size:20px;line-height:0;">→</span></a>
     </div>
     <a class="orbi-project-proof" href="https://decorato.vercel.app/" target="_blank" rel="noopener noreferrer" data-reveal>
-      <img src="assets/portfolio-previews/dcoratto.jpg?v=1" alt="Prévia do site D'Coratto Sob Medida" width="1200" height="750" loading="lazy" fetchpriority="low" decoding="async">
-      <span>
+      <span class="orbi-project-proof-preview">
+        <img src="assets/portfolio-previews/dcoratto.jpg?v=1" alt="Prévia do site D'Coratto Sob Medida" width="1200" height="750" loading="lazy" fetchpriority="low" decoding="async">
+      </span>
+      <span class="orbi-project-proof-text">
         <span style="display: block; font-family: 'Orbitron', sans-serif; color: #ff6254; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Outro projeto real</span>
-        <strong style="display: block; margin: 16px 0 10px; font-family: 'Orbitron', sans-serif; font-size: clamp(22px, 3vw, 32px);">D'Coratto Sob Medida</strong>
-        <span style="display: block; max-width: 600px; color: rgba(255,255,255,.65); font-size: 16px; line-height: 1.55;">Móveis planejados e marmoraria apresentados por ambientes, com navegação visual que ajuda o cliente a reconhecer possibilidades e pedir contato.</span>
+        <strong style="display: block; margin: 13px 0 9px; font-family: 'Orbitron', sans-serif; font-size: clamp(21px, 2.2vw, 28px);">D'Coratto Sob Medida</strong>
+        <span style="display: block; max-width: 430px; color: rgba(255,255,255,.65); font-size: 15px; line-height: 1.5;">Móveis planejados e marmoraria apresentados por ambientes, com navegação visual que ajuda o cliente a reconhecer possibilidades e pedir contato.</span>
       </span>
     </a>
     <div class="orbi-model-grid" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;">
@@ -878,7 +883,8 @@ document.addEventListener('DOMContentLoaded', function(){
     // Isso evita manter 15 páginas pesadas abertas ao mesmo tempo.
     const previewTargets = [
       ...document.querySelectorAll('.orbi-model-window'),
-      ...document.querySelectorAll('#portfolio .orbi-grid-2 > a > div:first-child')
+      ...document.querySelectorAll('#portfolio .orbi-grid-2 > a > div:first-child'),
+      ...document.querySelectorAll('.orbi-project-proof-preview')
     ];
     const activePreviews = new Map();
     const saveData = navigator.connection && navigator.connection.saveData;
@@ -895,7 +901,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const startPreview = (target) => {
       if (activePreviews.has(target)) return;
       while (activePreviews.size >= maxLivePreviews) {
-        stopPreview(activePreviews.keys().next().value);
+        const removable = Array.from(activePreviews.keys()).find((item) => !item.classList.contains('orbi-project-proof-preview'));
+        stopPreview(removable || activePreviews.keys().next().value);
       }
       const card = target.closest('a');
       const source = card && card.href;
